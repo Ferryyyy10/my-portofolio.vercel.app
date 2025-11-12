@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya - [Nama Anda]</title>
+    <!-- Memuat Tailwind CSS untuk styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat Phosphor Icons untuk ikon Menu -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/dist/phosphor.js"></script>
+    <style>
+        /* Menggunakan font Inter */
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3ffec;
+            /* Latar belakang hijau muda yang menenangkan */
+        }
+        /* Style untuk tautan navigasi */
+        
+        .nav-link {
+            transition: color 0.3s, transform 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: #10b981;
+            /* Warna hijau terang saat di-hover */
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen">
+
+    <!-- Header & Navigasi Desktop -->
+    <header class="bg-white shadow-md p-4 sticky top-0 z-10">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <!-- Nama/Logo -->
+            <a href="#home" class="text-2xl font-bold text-gray-800 hover:text-indigo-600 transition duration-300">
+                [Nama Lengkap Anda]
+            </a>
+
+            <!-- Tombol Menu Mobile (Hanya terlihat di mobile) -->
+            <button id="menu-toggle" class="md:hidden text-gray-600 hover:text-indigo-600 p-2 rounded-lg transition duration-300">
+                <!-- Ikon Hamburger -->
+                <i class="ph-bold ph-list text-2xl"></i> 
+            </button>
+
+            <!-- Navigasi Utama (Hanya Desktop) -->
+            <nav id="desktop-nav" class="hidden md:flex space-x-6 text-gray-600 font-medium">
+                <a href="#about" class="nav-link hover:text-indigo-600">Tentang Saya</a>
+                <a href="#projects" class="nav-link hover:text-indigo-600">Proyek</a>
+                <a href="#contact" class="nav-link hover:text-indigo-600">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu Navigasi Mobile (Side Drawer) -->
+    <nav id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white z-50 
+                transform -translate-x-full transition-transform 
+                duration-300 md:hidden p-6 shadow-2xl">
+        <div class="flex justify-between items-center mb-8 border-b pb-4">
+            <span class="text-2xl font-bold text-gray-800">[Nama Lengkap Anda]</span>
+            <button id="menu-close" class="text-gray-600 hover:text-indigo-600 p-2 rounded-lg">
+                <!-- Ikon Silang/Tutup -->
+                <i class="ph-bold ph-x text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Tautan Menu Mobile -->
+        <div class="flex flex-col space-y-4 text-xl font-medium text-gray-700">
+            <a href="#home" class="p-2 hover:bg-indigo-50 rounded">Beranda</a>
+            <a href="#about" class="p-2 hover:bg-indigo-50 rounded">Tentang Saya</a>
+            <a href="#projects" class="p-2 hover:bg-indigo-50 rounded">Proyek</a>
+            <a href="#contact" class="p-2 hover:bg-indigo-50 rounded">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- Kontainer Utama Konten -->
+    <main class="max-w-4xl mx-auto p-4 md:p-8 space-y-16">
+
+        <!-- Bagian 1: Home/Perkenalan -->
+        <section id="home" class="py-16 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+                Halo, saya <span class="text-indigo-600">[Nama Anda]</span>
+            </h1>
+            <p class="text-xl text-gray-600 mt-4 mb-8">
+                Saya seorang [Ganti dengan Profesi Anda, misalnya: Web Developer / Desainer Grafis / Penulis Konten].
+            </p>
+            <a href="#projects" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                Lihat Proyek Saya
+            </a>
+        </section>
+
+        <!-- Bagian 2: Tentang Saya -->
+        <section id="about" class="bg-white p-6 md:p-10 rounded-xl shadow-lg">
+            <h2 class="text-3xl font-bold text-gray-800 border-b-2 border-indigo-500 pb-2 mb-6">
+                Tentang Saya
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6 items-center">
+                <!-- Placeholder Foto Profil -->
+                <div class="md:col-span-1 flex justify-center">
+                    <div class="w-32 h-32 md:w-40 md:h-40 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 text-sm font-semibold border-4 border-indigo-500">
+                        FOTO ANDA
+                    </div>
+                </div>
+                <!-- Deskripsi Diri -->
+                <div class="md:col-span-2 text-gray-700 space-y-4">
+                    <p>
+                        [Paragraf 1: Jelaskan pengalaman dan minat Anda. Misalnya: "Saya memiliki pengalaman 3 tahun dalam pengembangan web, fokus pada React dan Tailwind CSS. Saya antusias dalam menciptakan solusi digital yang efisien dan estetis."]
+                    </p>
+                    <p>
+                        [Paragraf 2: Ceritakan nilai apa yang Anda bawa. Misalnya: "Saya percaya pada kode yang bersih dan praktik kerja yang kolaboratif. Saya selalu mencari cara untuk belajar dan beradaptasi dengan teknologi baru."]
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian 3: Proyek -->
+        <section id="projects" class="py-4">
+            <h2 class="text-3xl font-bold text-gray-800 border-b-2 border-indigo-500 pb-2 mb-6">
+                Proyek Pilihan
+            </h2>
+
+            <!-- Grid Proyek (Responsif: 1 kolom di mobile, 2 kolom di desktop) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Kartu Proyek 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold text-indigo-600 mb-2">Nama Proyek 1</h3>
+                    <p class="text-gray-600 text-sm mb-3">Teknologi: Next.js, Firebase</p>
+                    <p class="text-gray-700 mb-4">
+                        [Deskripsi singkat proyek ini, misalnya: Aplikasi manajemen tugas real-time untuk tim kecil.]
+                    </p>
+                    <a href="https://id.wikipedia.org/wiki/Proyek" target="_blank" class="text-sm text-indigo-500 hover:text-indigo-700 font-medium">
+                        Lihat Proyek &rarr;
+                    </a>
+                </div>
+
+                <!-- Kartu Proyek 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold text-indigo-600 mb-2">Nama Proyek 2</h3>
+                    <p class="text-gray-600 text-sm mb-3">Teknologi: Figma, Adobe Illustrator</p>
+                    <p class="text-gray-700 mb-4">
+                        [Deskripsi singkat proyek ini, misalnya: Redesign UI/UX untuk aplikasi e-commerce. Fokus pada kemudahan navigasi.]
+                    </p>
+                    <a href="https://id.wikipedia.org/wiki/Proyek" target="_blank" class="text-sm text-indigo-500 hover:text-indigo-700 font-medium">
+                        Lihat Proyek &rarr;
+                    </a>
+                </div>
+
+                <!-- Tambahkan lebih banyak Kartu Proyek di sini jika perlu -->
+
+            </div>
+        </section>
+
+        <!-- Bagian 4: Kontak -->
+        <section id="contact" class="bg-indigo-600 text-white p-6 md:p-10 rounded-xl shadow-2xl text-center">
+            <h2 class="text-3xl font-bold mb-4">Mari Berkolaborasi!</h2>
+            <p class="text-indigo-100 mb-8">
+                Saya selalu terbuka untuk proyek baru dan peluang kolaborasi. Hubungi saya melalui:
+            </p>
+
+            <div class="space-y-3">
+                <p class="text-xl font-medium">
+                    Email: <a href="mailto:[Email Anda]" class="underline hover:text-white transition duration-200">[Email Anda]</a>
+                </p>
+                <p class="text-lg">
+                    LinkedIn: <a href="https://www.linkedin.com/company/anda-us" target="_blank" class="underline hover:text-white transition duration-200">/in/[NamaProfilLinkedIn]</a>
+                </p>
+                <p class="text-lg">
+                    GitHub: <a href="https://github.com/ldclabs/anda" target="_blank" class="underline hover:text-white transition duration-200">/u/[UsernameGitHub]</a>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center p-4 mt-16 text-gray-500 text-sm border-t border-gray-300">
+        &copy; <span id="current-year"></span> [Nama Anda]. Dibuat dengan cinta dan Tailwind CSS.
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuClose = document.getElementById('menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Fungsi untuk membuka menu drawer
+            function openMenu() {
+                mobileMenu.classList.remove('-translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+            }
+
+            // Fungsi untuk menutup menu drawer
+            function closeMenu() {
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('-translate-x-full');
+            }
+
+            // Event listener untuk tombol buka/tutup
+            menuToggle.addEventListener('click', openMenu);
+            menuClose.addEventListener('click', closeMenu);
+
+            // Tutup menu saat link navigasi di klik (agar menu tidak menutupi tampilan)
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+
+            // Set tahun saat ini di footer secara otomatis
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+
+</html>
